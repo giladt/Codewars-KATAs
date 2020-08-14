@@ -19,6 +19,4 @@ function nextId(ids){
   for(let id in ids) {
     if(ids.indexOf(parseInt(id)+1)<0) return parseInt(id)+1;
   }
-  
-  return ids[ids.length - 1] + 1;
 }
