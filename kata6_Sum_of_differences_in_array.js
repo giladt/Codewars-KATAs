@@ -15,3 +15,8 @@ function sumOfDifferences(arr) {
     .sort((a,b)=>b-a)
     .reduce((sum, curr, idx, src) => sum += src[idx] - src[idx+1] || 0 ,0);
 }
+
+/* Solution 2 */
+function sumOfDifferences(arr) {
+  return (arr.length>0)? Math.max(...arr) - Math.min(...arr) : 0;
+}
