@@ -41,13 +41,13 @@ function boredom(staff){
   };
 
   let cumulative_score = 0;
-  for(let member in staff){
-    cumulative_score+=boredom_scale[staff[member]];
-  }
+  Object.values(staff).map(member=>cumulative_score+=boredom_scale[member]);
   
-  if(cumulative_score <= 80) return 'kill me now';
-  if(cumulative_score < 100) return 'i can handle this';
-  return 'party time!!';
+  return ( 
+    (cumulative_score <= 80) ? 'kill me now' :
+    (cumulative_score < 100) ? 'i can handle this' :
+    'party time!!'
+  );
 }
 
 let staff = boredom({
